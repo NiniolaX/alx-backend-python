@@ -6,4 +6,10 @@ representation.
 
 
 def to_str(n: float) -> str:
+    """Returns the string representation of a float
+    Args:
+        n(float): number
+    Return:
+        (str): String representation of number
+    """
     return str(n)
