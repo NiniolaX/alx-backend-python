@@ -1,4 +1,4 @@
-#!usr/bin/env python3
+#!/usr/bin/env python3
 """
 Contains a type-annoted function that takes in a list and returns a list of
 tuples.
