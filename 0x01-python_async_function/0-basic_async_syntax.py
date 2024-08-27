@@ -12,7 +12,7 @@ async def wait_random(max_delay: int = 10) -> int:
     value) and returns the duration of the delay.
 
     Args:
-        max_delay (int): The maximum delay value to pass to wait_random
+        max_delay (int): The maximum delay value
 
     Return:
         int: Duration of delay

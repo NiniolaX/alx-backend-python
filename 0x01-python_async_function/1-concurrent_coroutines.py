@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Contains an async routine that executes two coroutines at the same time """
+Contains an async routine that executes multiple coroutines at the same time.
+"""
 from typing import List
 import asyncio
 
