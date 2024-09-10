@@ -9,3 +9,4 @@ async def main():
     print(await async_comprehension())
 
 asyncio.run(main())
+print(async_comprehension.__annotations__)
