@@ -6,7 +6,7 @@ tuple.
 from typing import Tuple, Union
 
 
-def to_kv(k: str, v: Union[int, float]) -> Tuple[str, Union[float]]:
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """Takes in a list of floats and returns their sum
     Args:
         k(str): String to be added to tuple
