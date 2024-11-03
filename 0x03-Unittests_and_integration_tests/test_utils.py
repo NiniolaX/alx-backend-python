@@ -48,9 +48,12 @@ class TestGetJson(unittest.TestCase):
                       url: str,
                       test_payload: dict,
                       mock_get: Mock) -> None:
-        """ Tests the get_json method returns expected result """
-        # Configure the mock (mock_get) to return a response with desired JSON
+        """ Test get_json function returns expected result """
+        # Configure the mock (mock_get) to imitate HTTP response behaviour
+
+        # Mock Response object returned by requests
         mock_get.return_value = Mock()
+        # Mock JSON data returned by calling .json() on response object
         mock_get.return_value.json.return_value = test_payload
 
         # Call function and check its return value
