@@ -18,7 +18,7 @@ class TestGithibOrgClient(unittest.TestCase):
     @patch('client.get_json')
     def test_org(self, org_name: str,
                  expected_result: dict,
-                 mock_get_json: Mock):
+                 mock_get_json: Mock) -> None:
         """
         Tests GithubOrgClient.org returns correct value for given org_name
         Mocks get_json to avoid actual API calls
@@ -31,4 +31,5 @@ class TestGithibOrgClient(unittest.TestCase):
         # Call `org` property and check that it matches expected result
         self.assertEqual(client.org, expected_result)
 
-        mock_get_json.assert_called_once_with(f"https://api.github.com/orgs/{org_name}")
+        url = f"https://api.github.com/orgs/{org_name}"
+        mock_get_json.assert_called_once_with(url)
