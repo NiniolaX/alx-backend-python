@@ -11,13 +11,12 @@ from unittest.mock import patch, Mock
 class TestGithibOrgClient(unittest.TestCase):
     """ Test case for GithubOrgClient """
     @parameterized.expand([
-        ("google", {"login": "google",
-                    "repos_url": "https://api.github.com/orgs/google/repos"}),
-        ("abc", {"login": "abc",
-                 "repos_url": "https://api.github.com/orgs/abc/repos"})
+        ("google", {"repos_url": "https://api.github.com/orgs/google/repos"}),
+        ("abc", {"repos_url": "https://api.github.com/orgs/abc/repos"})
     ])
     @patch('client.get_json')
-    def test_org(self, org_name: str,
+    def test_org(self,
+                 org_name: str,
                  expected_result: Dict,
                  mock_get_json: Mock) -> None:
         """
