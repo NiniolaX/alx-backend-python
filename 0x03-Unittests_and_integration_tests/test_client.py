@@ -4,6 +4,7 @@
 import unittest
 from client import GithubOrgClient
 from parameterized import parameterized
+from typing import Dict
 from unittest.mock import patch, Mock
 
 
@@ -17,7 +18,7 @@ class TestGithibOrgClient(unittest.TestCase):
     ])
     @patch('client.get_json')
     def test_org(self, org_name: str,
-                 expected_result: dict,
+                 expected_result: Dict,
                  mock_get_json: Mock) -> None:
         """
         Tests GithubOrgClient.org returns correct value for given org_name
@@ -31,5 +32,9 @@ class TestGithibOrgClient(unittest.TestCase):
         # Call `org` property and check that it matches expected result
         self.assertEqual(client.org, expected_result)
 
-        url = f"https://api.github.com/orgs/{org_name}"
-        mock_get_json.assert_called_once_with(url)
+        expected_url = f"https://api.github.com/orgs/{org_name}"
+        mock_get_json.assert_called_once_with(expected_url)
+
+
+if __name__ == "__main__":
+    unittest.main()
