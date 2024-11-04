@@ -9,6 +9,7 @@ from unittest.mock import patch, Mock
 from utils import access_nested_map, get_json, memoize
 
 
+# Get familiar with parameterized
 class TestAccessNestedMap(unittest.TestCase):
     """ Test class for access_nested_map function """
     @parameterized.expand([
@@ -37,6 +38,7 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(str(context.exception), expected_message)
 
 
+# Mock a function
 class TestGetJson(unittest.TestCase):
     """ Test class for get_json function """
     @parameterized.expand([
@@ -63,6 +65,7 @@ class TestGetJson(unittest.TestCase):
         mock_get.assert_called_once_with(url)
 
 
+# Mock a method of a class
 class TestMemoize(unittest.TestCase):
     """ Test class for memoize function """
 
